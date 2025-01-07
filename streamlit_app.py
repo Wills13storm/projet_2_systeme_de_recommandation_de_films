@@ -203,7 +203,7 @@ df['genres_x'].str.get_dummies()
 df = pd.concat([df , df['genres_x'].str.get_dummies()], axis = 1)
 
 # Garder les colonnes utiles
-numeric_columns = df.select_dtypes(include=['number'])
+numeric_columns = df.select_dtypes(include=['number']).drop(columns=['id'])
 
 # Normaliser les colonnes numériques
 scaler = MinMaxScaler()
